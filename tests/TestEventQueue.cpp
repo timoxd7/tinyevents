@@ -17,6 +17,9 @@ TEST_F(TestEventQueue, MessagesQueuedAndThenIgnoredWhenNoListeners) {
     struct CustomType { };
     dispatcher.queue(CustomType{});
 
+    CustomType customType;
+    dispatcher.queue(customType);
+
     dispatcher.process();
 }
 
